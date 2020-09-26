@@ -1,0 +1,44 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+body, 
+.container,
+.trip,
+.expense-list {
+    display: flex;
+}
+
+body {
+    flex-flow: column;
+    align-items: center;
+}
+
+.trip {
+    flex-flow: column;
+}
+
+.expense-list {
+    flex-flow: column;
+    align-items: center;
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.expenses {
+    
+}
+
+.helper {
+    border: 1px solid red;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
