@@ -11,7 +11,8 @@
 .expense-list,
 .expense,
 .total,
-.trip-total {
+.trip-total,
+.main-footer {
     display: flex;
 }
 
@@ -26,18 +27,12 @@ ul {
 }
 
 h1 {
-    margin: auto;
-    font-size: 1.8em;
+    font-size: 1.8rem;
 }
 
 h2 {
-    margin: .5em;
+    margin: .5rem;
     color: white;
-}
-
-.main-header {
-    align-items: center;
-    background-color: rgb(71, 142, 189);
 }
 
 .wrapper {
@@ -49,6 +44,15 @@ h2 {
     padding: 20px;
 }
 
+.main-header {
+    align-items: center;
+    background-color: rgb(71, 142, 189);
+}
+
+.site-title {
+    margin: 0 0 0 1.4rem;
+}
+
 .page-main {
     flex: 1;
 }
@@ -56,9 +60,9 @@ h2 {
 .trip {
     flex-flow: column;
     align-items: center;
-    margin: 1em;
-    padding: .5em;
-    border-radius: 1em;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
     background-color: rgb(29, 27, 141);
 }
 
@@ -69,10 +73,10 @@ h2 {
 
 .expense {
     justify-content: space-between;
-    width: 15em;
-    margin: .5em 1em;
+    width: 15rem;
+    margin: .5rem 1rem;
     padding: 10px;
-    border-radius: 1em;
+    border-radius: 1rem;
     background-color: rgb(71, 142, 189);
 }
 
@@ -80,14 +84,19 @@ h2 {
 .total {
     margin: 10px;
     padding: 10px;
-    border-radius: 1em;
+    border-radius: 1rem;
     background-color: rgb(71, 142, 189);
 }
 
 .trip-total {
     justify-content: space-between;
     align-items: center;
-    width: 15em;
+    width: 15rem;
+}
+
+.main-footer {
+    justify-content: center;
+    background-color: rgb(71, 142, 189);
 }
 
 .helper {
