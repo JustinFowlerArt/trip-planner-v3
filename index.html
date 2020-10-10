@@ -6,54 +6,66 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href=css/styles.css>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="main-header">
-            <nav class="main-nav helper">
-                <button>Menu</button>
-            </nav>
+    <div class="wrapper column flex">
+        <header class="main-header flex">
+            <a href="#"><img src="https://via.placeholder.com/100" class="site-logo"></a>
             <h1 class="site-title">Trip Planner</h1>
+            <nav class="main-nav flex">
+                <a href="#" class="hamburger">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <ul>
+                    <a href="#"><li>Features</li></a>
+                    <a href="#"><li>Pricing</li></a>
+                    <a href="#"><li>Sign Up</li></a>
+                </ul>
+            </nav>
         </header>
-        <main class="page-main">
-            <section class="trip helper">
+        <main class="page-main column flex">
+            <section class="trip column flex">
                 <h2>Denver, CO</h2>
-                <ul class="expense-list">
-                    <ul class="expense">
+                <ul class="expense-list column flex">
+                    <ul class="expense flex">
                         <li>Airfare</li> 
                         <li>$125</li>
                     </ul>
-                    <ul class="expense">
+                    <ul class="expense flex">
                         <li>Rental Car</li>
                         <li>$275</li>
                     </ul>       
                     <li class="add-expense">Add Expense</li>
-                    <ul class="trip-total">
+                    <ul class="trip-total flex">
                         <li>Trip Total</li>
                         <li class="total">$400</li>
                     </ul>
                 </ul>
             </section>
-            <section class="trip helper">
+            <section class="trip column flex">
                 <h2>Seattle, WA</h2>
-                <ul class="expense-list">
-                    <ul class="expense">
+                <ul class="expense-list column flex">
+                    <ul class="expense flex">
                         <li>Airfare</li> 
                         <li>$350</li>
                     </ul>
-                    <ul class="expense">
+                    <ul class="expense flex">
                         <li>Airbnb</li>
                         <li>$500</li>
                     </ul>       
                     <li class="add-expense">Add Expense</li>
-                    <ul class="trip-total">
+                    <ul class="trip-total flex">
                         <li>Trip Total</li>
                         <li class="total">$850</li>
                     </ul>
                 </ul>
             </section>
+            <section class="trip column flex">
+                <h2>Add New</h2>
+            </section>
         </main>
-        <footer class="main-footer">
+        <footer class="main-footer flex">
             <span>2020 &#169; Justin Fowler </span>
         </footer>
     </div>

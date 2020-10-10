@@ -1,20 +1,11 @@
+/* ----- Global Styles ----- */
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
-
-.wrapper,
-.main-header,
-.main-nav,
-.trip,
-.expense-list,
-.expense,
-.total,
-.trip-total,
-.main-footer {
-    display: flex;
 }
+
+/* ----- Element Styles ----- */
 
 body {
     color: white;
@@ -35,8 +26,16 @@ h2 {
     color: white;
 }
 
-.wrapper {
+/* ----- Ckass Styles ----- */
+.flex {
+    display: flex;
+}
+
+.column {
     flex-flow: column;
+}
+
+.wrapper {
     min-height: 100vh;
 }
 
@@ -44,22 +43,42 @@ h2 {
     padding: 20px;
 }
 
+.site-logo {
+    width: 50px;
+}
+
+.site-title {
+    margin: auto;
+}
+
 .main-header {
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(71, 142, 189);
 }
 
-.site-title {
-    margin: 0 0 0 1.4rem;
+.main-nav {
+    justify-content: space-between;
+}
+
+.hamburger {
+    font-size: 2rem;
+    color: white;
+}
+
+.main-nav ul {
+    display: none;
 }
 
 .page-main {
     flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .trip {
-    flex-flow: column;
     align-items: center;
+    max-width: 350px;
     margin: 1rem;
     padding: .5rem;
     border-radius: 1rem;
@@ -67,7 +86,6 @@ h2 {
 }
 
 .expense-list {
-    flex-flow: column;
     align-items: center;
 }
 
@@ -98,6 +116,53 @@ h2 {
     justify-content: center;
     background-color: rgb(71, 142, 189);
 }
+
+/* ----- Media Queries ----- */
+@media only screen and (min-width: 769px) {
+    .site-title {
+        margin: 0 0 0 150px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .main-nav ul {
+        display: flex;
+    }
+
+    .main-nav a {
+        font-size: 1.25rem;
+        margin-right: 15px;
+        color: white;
+    }
+
+    .main-nav a:hover {
+        color: rgb(29, 27, 141);
+    }
+
+    .main-nav a:last-child {
+        margin-right: 0;
+    }
+
+    .page-main {
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .trip {
+        width: 50%;
+        flex-grow: 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .site-title {
+        margin: 0 0 0 130px;
+    }
+}
+
+/* ----- Helper Class Styles ----- */
 
 .helper {
     border: 1px solid red;
