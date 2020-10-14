@@ -149,17 +149,10 @@ h2 {
         flex-direction: row;
         align-items: baseline;
     }
-
-    .trip {
-        width: 50%;
-        flex-grow: 0;
-    }
 }
 
 @media only screen and (min-width: 1024px) {
-    .site-title {
-        margin: 0 0 0 130px;
-    }
+
 }
 
 /* ----- Helper Class Styles ----- */
