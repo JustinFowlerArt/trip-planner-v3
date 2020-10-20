@@ -1,3 +1,4 @@
+// Convert to Trips class
 const trips = [
     {
         location: "Denver, CO",
@@ -12,6 +13,7 @@ const trips = [
                 expensePrice: 275
             }
         ],
+        //Add function to calucate and display trip total
         total: 400
     },
     {
@@ -31,6 +33,9 @@ const trips = [
     }
 ];
 
+// Create Expense Class
+
+
 // Log trips content to console
 for ( let i = 0; i < trips.length; i++ ) {
     console.log(`${trips[i].location}`);
@@ -45,10 +50,6 @@ for ( let i = 0; i < trips.length; i++ ) {
     }
     console.log(`${trips[i].total}`);
 }
-
-// Add class for creating trips
-
-//Add function to calucate and display trip total
 
 // Add function to add new expenses to trip
 // function addExpense(expenseName, expensePrice) {

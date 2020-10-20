@@ -82,7 +82,7 @@ h2 {
     margin: 1rem;
     padding: .5rem;
     border-radius: 1rem;
-    background-color: rgb(29, 27, 141);
+    background-color: #0000b5;
 }
 
 .expense-list {
@@ -120,7 +120,7 @@ h2 {
 /* ----- Media Queries ----- */
 @media only screen and (min-width: 769px) {
     .site-title {
-        margin: 0 0 0 150px;
+        margin: 0 0 0 190px;
     }
 
     .hamburger {
@@ -131,6 +131,10 @@ h2 {
         display: flex;
     }
 
+    .main-nav li {
+        padding: 5px;
+    }
+
     .main-nav a {
         font-size: 1.25rem;
         margin-right: 15px;
@@ -139,6 +143,8 @@ h2 {
 
     .main-nav a:hover {
         color: rgb(29, 27, 141);
+        background-color: white;
+        border-radius: 4px;
     }
 
     .main-nav a:last-child {
