@@ -1,5 +1,9 @@
+// Selectors
+const tripList = document.querySelector('.trip-list');
+const newTripButton = document.querySelector('.new-trip');
+
 // Holds trip objects
-const trips = [];
+let trips = [];
 
 // Blueprint to create new trip object
 class Trip {
@@ -31,10 +35,42 @@ class Expense {
     }
 }
 
-// Create new trip object
-function addTrip(name) {
-    trips.push( new Trip(name) );
-}
+// Base for writing trip HTML to page
+let tripHTML = '';
+function tripContent() {
+    // for ( i = 0; i < trips.length; i++) {}
+    tripHTML += `
+    <section class="trip column flex">
+        <h2>Seattle, WA</h2>
+        <ul class="expense-list column flex">
+            <button class="add-expense">Add Expense</button>
+            <li class="trip-total flex">
+                <p>Trip Total</p>
+                <p class="total">$0</p>
+            </li>
+        </ul>
+    </section>`;
+} 
+
+// tripContent();
+// tripList.innerHTML = tripHTML;
+
+// Create new trip object (Array)
+newTripButton.addEventListener('click', () => {
+    let tripName = prompt("Please name your trip");
+    trips.push( new Trip(tripName) );
+    tripList.innerHTML = trips[0].name;
+});
+
+
+//Add new trip object function
+// function addTrip(name) {
+//     trips.push( new Trip(name) );
+// }
+
+
+
+
 
 
 

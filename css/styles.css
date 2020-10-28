@@ -26,6 +26,12 @@ h2 {
     color: white;
 }
 
+li > p {
+    margin: 0;
+    padding: 0;
+}
+
+
 /* ----- Ckass Styles ----- */
 .flex {
     display: flex;
@@ -70,7 +76,7 @@ h2 {
     display: none;
 }
 
-.page-main {
+.trip-list {
     flex: 1;
     align-items: center;
     flex-wrap: wrap;
@@ -82,6 +88,17 @@ h2 {
     margin: 1rem;
     padding: .5rem;
     border-radius: 1rem;
+    background-color: #0000b5;
+}
+
+.new-trip {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    color: white;
     background-color: #0000b5;
 }
 
@@ -98,6 +115,11 @@ h2 {
     background-color: rgb(71, 142, 189);
 }
 
+.add-expense {
+    color: white;
+    border: 1px solid white;
+}
+
 .add-expense,
 .total {
     margin: 10px;
@@ -107,9 +129,11 @@ h2 {
 }
 
 .trip-total {
+    width: 15rem;
+    margin: .5rem 1rem;
+    width: 15rem;
     justify-content: space-between;
     align-items: center;
-    width: 15rem;
 }
 
 .main-footer {
@@ -151,7 +175,7 @@ h2 {
         margin-right: 0;
     }
 
-    .page-main {
+    .trip-list {
         flex-direction: row;
         align-items: baseline;
     }
