@@ -1,6 +1,8 @@
 // Selectors
 const tripList = document.querySelector('.trip-list');
 const newTripButton = document.querySelector('.new-trip');
+const addExpenseButton = document.querySelectorAll('.add-expense')[0];
+const expenseList = document.querySelectorAll('.expense-list')[0];
 
 // Holds trip objects
 let trips = [];
@@ -36,37 +38,60 @@ class Expense {
 }
 
 // Base for writing trip HTML to page
-let tripHTML = '';
+let tripInfo = '';
 function tripContent() {
-    // for ( i = 0; i < trips.length; i++) {}
-    tripHTML += `
-    <section class="trip column flex">
-        <h2>Seattle, WA</h2>
-        <ul class="expense-list column flex">
-            <button class="add-expense">Add Expense</button>
-            <li class="trip-total flex">
-                <p>Trip Total</p>
-                <p class="total">$0</p>
-            </li>
-        </ul>
-    </section>`;
-} 
+    for ( let i = 0; i < trips.length; i++) {
+        tripInfo = `
+            <h2>${trips[i].name}</h2>
+            <ul class="expense-list column flex">
+                <button class="add-expense" id="${trips.length -1}">Add Expense</button>
+                <li class="trip-total flex">
+                    <p>Trip Total</p>
+                    <p class="total">$${trips[i].total}</p>
+                </li>
+            </ul>
+        `;
+    }
+}
 
-// tripContent();
-// tripList.innerHTML = tripHTML;
+// Create trip nodes
+function tripDOM() {
+    let section = document.createElement("section");
+    section.className = "trip column flex";
+    section.id = trips.length -1;
+    section.innerHTML = tripInfo;
+    tripList.appendChild(section);
+}
 
-// Create new trip object (Array)
+// Create new trip object
 newTripButton.addEventListener('click', () => {
     let tripName = prompt("Please name your trip");
     trips.push( new Trip(tripName) );
-    tripList.innerHTML = trips[0].name;
+    tripContent();
+    tripDOM();
 });
 
+// Create new expense object
+addExpenseButton.addEventListener('click', () => {
+    let expenseName = prompt("Please name your expense");
+    let expensePrice = prompt("Please enter the expense amount");
+    trips[0].addExpense(expenseName, expensePrice);
+    expenseDOM();
+});
 
-//Add new trip object function
-// function addTrip(name) {
-//     trips.push( new Trip(name) );
-// }
+// Create trip nodes
+function expenseDOM() {
+    let li = document.createElement("li");
+    li.className = "expense flex";
+    li.id = trips[0].expenses.length -1;
+    li.innerHTML = `                
+        <p>${trips[0].expenses[0].name}</p> 
+        <p>$${trips[0].expenses[0].price}</p>
+    `;
+    expenseList.appendChild(li);
+    expenseList.insertBefore(li, addExpenseButton);
+}
+
 
 
 
@@ -88,10 +113,6 @@ newTripButton.addEventListener('click', () => {
 
 // denver.expenses.push( new Expense('Airfare', 125) );
 // denver.expenses.push( new Expense('Rental Car', 275) );
-
-
-
-
 
 // const trips = [
 //     {

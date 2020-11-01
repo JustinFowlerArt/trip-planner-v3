@@ -76,8 +76,13 @@ li > p {
     display: none;
 }
 
-.trip-list {
+.main {
     flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.trip-list {
     align-items: center;
     flex-wrap: wrap;
 }
@@ -175,6 +180,7 @@ li > p {
         margin-right: 0;
     }
 
+    .main,
     .trip-list {
         flex-direction: row;
         align-items: baseline;

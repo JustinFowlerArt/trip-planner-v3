@@ -24,43 +24,45 @@
                 </ul>
             </nav>
         </header>
-        <main class="trip-list column flex" role="main">
-            <section class="trip column flex">
-                <h2>Denver, CO</h2>
-                <ul class="expense-list column flex">
-                    <li class="expense flex">
-                        <p>Airfare</p> 
-                        <p>$125</p>
-                    </li>
-                    <li class="expense flex">
-                        <p>Rental Car</p>
-                        <p>$275</p>
-                    </li>       
-                    <li class="add-expense">Add Expense</li>
-                    <li class="trip-total flex">
-                        <p>Trip Total</p>
-                        <p class="total">$400</p>
-                    </li>
-                </ul>
-            </section>
-            <section class="trip column flex">
-                <h2>Seattle, WA</h2>
-                <ul class="expense-list column flex">
-                    <li class="expense flex">
-                        <p>Airfare</p> 
-                        <p>$350</p>
-                    </li>
-                    <li class="expense flex">
-                        <p>Airbnb</p>
-                        <p>$500</p>
-                    </li>       
-                    <button class="add-expense">Add Expense</button>
-                    <li class="trip-total flex">
-                        <p>Trip Total</p>
-                        <p class="total">$850</p>
-                    </li>
-                </ul>
-            </section>
+        <main class="main column flex" role="main">
+            <div class="trip-list column flex" id="trips">
+                <section class="trip column flex">
+                    <h2>Denver, CO</h2>
+                    <ul class="expense-list column flex">
+                        <li class="expense flex">
+                            <p>Airfare</p> 
+                            <p>$125</p>
+                        </li>
+                        <li class="expense flex">
+                            <p>Rental Car</p>
+                            <p>$275</p>
+                        </li>       
+                        <button class="add-expense">Add Expense</button>
+                        <li class="trip-total flex">
+                            <p>Trip Total</p>
+                            <p class="total">$400</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="trip column flex">
+                    <h2>Seattle, WA</h2>
+                    <ul class="expense-list column flex">
+                        <li class="expense flex">
+                            <p>Airfare</p> 
+                            <p>$350</p>
+                        </li>
+                        <li class="expense flex">
+                            <p>Airbnb</p>
+                            <p>$500</p>
+                        </li>       
+                        <button class="add-expense">Add Expense</button>
+                        <li class="trip-total flex">
+                            <p>Trip Total</p>
+                            <p class="total">$850</p>
+                        </li>
+                    </ul>
+                </section>
+            </div><!--.trip-list -->
             <button class="new-trip">Add New</button>
         </main>
         <footer class="main-footer flex" role="contentinfo">
