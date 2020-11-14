@@ -72,8 +72,20 @@ li > p {
     color: white;
 }
 
-.main-nav ul {
+.nav-list {
     display: none;
+}
+
+.nav-list a {
+    font-size: 1.25rem;
+    margin-right: 15px;
+    color: white;
+}
+
+.nav-list a:hover {
+    color: rgb(29, 27, 141);
+    background-color: white;
+    border-radius: 4px;
 }
 
 .main {
@@ -156,27 +168,15 @@ li > p {
         display: none;
     }
 
-    .main-nav ul {
+    .nav-list {
         display: flex;
     }
 
-    .main-nav li {
+    .nav-list li {
         padding: 5px;
     }
 
-    .main-nav a {
-        font-size: 1.25rem;
-        margin-right: 15px;
-        color: white;
-    }
-
-    .main-nav a:hover {
-        color: rgb(29, 27, 141);
-        background-color: white;
-        border-radius: 4px;
-    }
-
-    .main-nav a:last-child {
+    .nav-list a:last-child {
         margin-right: 0;
     }
 

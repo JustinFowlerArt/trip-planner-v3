@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trip Planner</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href=css/styles.css>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,11 +13,11 @@
         <header class="main-header flex" role="banner">
             <a href="#"><img src="img/globe.png" class="site-logo" alt="Globe Logo"></a>
             <h1 class="site-title">Trip Planner</h1>
-            <nav class="main-nav flex" role="navigation">
+            <nav class="main-nav" role="navigation">
                 <a href="#" class="hamburger">
                     <i class="fa fa-bars"></i>
                 </a>
-                <ul>
+                <ul class="nav-list">
                     <a href="#"><li>Features</li></a>
                     <a href="#"><li>Pricing</li></a>
                     <a href="#"><li>Sign Up</li></a>
@@ -26,49 +26,13 @@
         </header>
         <main class="main column flex" role="main">
             <div class="trip-list column flex" id="trips">
-                <section class="trip column flex">
-                    <h2>Denver, CO</h2>
-                    <ul class="expense-list column flex">
-                        <li class="expense flex">
-                            <p>Airfare</p> 
-                            <p>$125</p>
-                        </li>
-                        <li class="expense flex">
-                            <p>Rental Car</p>
-                            <p>$275</p>
-                        </li>       
-                    </ul>
-                    <button class="add-expense">Add Expense</button>
-                    <div class="trip-total flex">
-                        <p>Trip Total</p>
-                        <p class="total">$400</p>
-                    </div>
-                </section>
-                <section class="trip column flex">
-                    <h2>Seattle, WA</h2>
-                    <ul class="expense-list column flex">
-                        <li class="expense flex">
-                            <p>Airfare</p> 
-                            <p>$350</p>
-                        </li>
-                        <li class="expense flex">
-                            <p>Airbnb</p>
-                            <p>$500</p>
-                        </li>       
-                    </ul>
-                    <button class="add-expense">Add Expense</button>
-                    <div class="trip-total flex">
-                        <p>Trip Total</p>
-                        <p class="total">$850</p>
-                    </div>
-                </section>
             </div><!--.trip-list -->
             <button class="new-trip">Add New</button>
         </main>
         <footer class="main-footer flex" role="contentinfo">
             <span>2020 &#169; Justin Fowler </span>
         </footer>
-    </div>
+    </div> <!--.wrapper-->
     <script src="js/scripts.js"></script>
 </body>
 </html>

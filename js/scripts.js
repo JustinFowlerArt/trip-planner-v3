@@ -1,9 +1,10 @@
 // Selectors
 const tripList = document.querySelector('.trip-list');
 const newTripButton = document.querySelector('.new-trip');
+const hambugerMenuButton = document.querySelector('.hamburger');
+const mainNavList = document.querySelector('.main-nav li');
 
-// Holds trip objects
-let trips = [];
+// Counter for id generation
 let counter = 0;
 
 // Blueprint to create new trip object
@@ -37,7 +38,7 @@ class Expense {
     }
 }
 
-// Generate trip HTML section element and contents
+// Generate trip section element and contents
 function getTripSectionElement (trip) {
     const section = document.createElement('section');
     section.id = `trip-section-${trip.id}`;
@@ -49,14 +50,14 @@ function getTripSectionElement (trip) {
         <button class="add-expense" id="expense-button-${trip.id}">Add Expense</button>
         <div class="trip-total flex">
             <p>Trip Total</p>
-            <p class="total">$${trip.total}</p>
+            <p class="total" id="trip-total-${trip.id}">$${trip.total}</p>
         </div>
     `;
     section.innerHTML = tripHTMLContent;
     return section
 }
 
-// Button to create new trip object and populate it with HTML content
+// Button to create new trip object and populate it with content
 newTripButton.addEventListener('click', () => {
     let tripName = prompt("Please name your trip");
     const newTrip = new Trip(tripName)
@@ -66,24 +67,34 @@ newTripButton.addEventListener('click', () => {
     newTripExpenseButton.addEventListener('click', () => {
         const newTripExpenseList = document.querySelector(`#expense-list-${newTrip.id}`);
         let expenseName = prompt("Please name your expense");
-        let expensePrice = prompt("Please enter the expense amount");
+        let expensePrice = parseInt( prompt("Please enter the expense amount") );
         newTrip.addExpense(expenseName, expensePrice);
         const newExpenseItemElement = getExpenseListItemElement(newTrip);
         newTripExpenseList.appendChild(newExpenseItemElement);
+        const newTripTotalElement = document.querySelector(`#trip-total-${newTrip.id}`);
+        newTripTotalElement.textContent = `$${newTrip.sumTotal()}`;
     });
     counter++;
 });
 
-// Fix trips array
-
-// Fix list item generation 
+// Generate expense li elements and contents 
 function getExpenseListItemElement(trip) {
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.className = "expense flex";
     li.id = `expense-item-${trip.id}`;
-    li.innerHTML = `                
-        <p>${trip.expenses[0].name}</p> 
-        <p>$${trip.expenses[0].price}</p>
-    `;
+    for (let i = 0; i < trip.expenses.length; i++ ) {
+        li.innerHTML = `                
+            <p>${trip.expenses[i].name}</p> 
+            <p>$${trip.expenses[i].price}</p>
+        `;
+    }
     return li;
 }
+
+// Hamburger Menu
+hambugerMenuButton.addEventListener('click', () => { 
+    mainNavList.style.display = 'block';
+});
+
+
+// Input Validation
