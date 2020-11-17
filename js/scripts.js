@@ -2,7 +2,7 @@
 const tripList = document.querySelector('.trip-list');
 const newTripButton = document.querySelector('.new-trip');
 const hambugerMenuButton = document.querySelector('.hamburger');
-const mainNavList = document.querySelector('.main-nav li');
+const navItems = document.querySelectorAll('.item');
 
 // Counter for id generation
 let counter = 0;
@@ -67,7 +67,7 @@ newTripButton.addEventListener('click', () => {
     newTripExpenseButton.addEventListener('click', () => {
         const newTripExpenseList = document.querySelector(`#expense-list-${newTrip.id}`);
         let expenseName = prompt("Please name your expense");
-        let expensePrice = parseInt( prompt("Please enter the expense amount") );
+        let expensePrice = parseFloat( prompt("Please enter the expense amount") );
         newTrip.addExpense(expenseName, expensePrice);
         const newExpenseItemElement = getExpenseListItemElement(newTrip);
         newTripExpenseList.appendChild(newExpenseItemElement);
@@ -93,7 +93,13 @@ function getExpenseListItemElement(trip) {
 
 // Hamburger Menu
 hambugerMenuButton.addEventListener('click', () => { 
-    mainNavList.style.display = 'block';
+    for ( let i = 0; i < navItems.length; i++ ) {
+        if ( navItems[i].classList.contains("hidden") ) {
+            navItems[i].classList.remove("hidden");
+        } else {
+            navItems[i].classList.add("hidden");
+        }
+    }
 });
 
 

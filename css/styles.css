@@ -31,6 +31,10 @@ li > p {
     padding: 0;
 }
 
+i {
+    color: white;
+}
+
 
 /* ----- Ckass Styles ----- */
 .flex {
@@ -54,35 +58,50 @@ li > p {
 }
 
 .site-title {
-    margin: auto;
+    margin: auto 20px;
 }
 
 .main-header {
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(71, 142, 189);
 }
 
+.site-info {
+    align-items: center;
+}
+
 .main-nav {
     justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hamburger {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
     font-size: 2rem;
-    color: white;
 }
 
-.nav-list {
+.hidden {
     display: none;
 }
 
-.nav-list a {
+.item {
+    margin: 20px;
+}
+
+.item a {
     font-size: 1.25rem;
-    margin-right: 15px;
+    padding: 10px;
     color: white;
 }
 
-.nav-list a:hover {
+.item a:hover {
     color: rgb(29, 27, 141);
     background-color: white;
     border-radius: 4px;
@@ -160,23 +179,24 @@ li > p {
 
 /* ----- Media Queries ----- */
 @media only screen and (min-width: 769px) {
-    .site-title {
-        margin: 0 0 0 190px;
+    .main-header {
+        flex-direction: row;
     }
 
     .hamburger {
         display: none;
     }
 
-    .nav-list {
+    .menu {
         display: flex;
     }
 
-    .nav-list li {
-        padding: 5px;
+    .item {
+        display: block;
+        margin: 0 15px 0 0;
     }
 
-    .nav-list a:last-child {
+    .item:nth-last-child(2) {
         margin-right: 0;
     }
 
@@ -188,7 +208,13 @@ li > p {
 }
 
 @media only screen and (min-width: 1024px) {
+    .site-info {
+        flex: 1;
+    }
 
+    .site-title {
+        margin: auto;
+    }
 }
 
 /* ----- Helper Class Styles ----- */
