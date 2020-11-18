@@ -77,7 +77,7 @@ newTripButton.addEventListener('click', () => {
                     const newExpenseItemElement = getExpenseListItemElement(newTrip);
                     newTripExpenseList.appendChild(newExpenseItemElement);
                     const newTripTotalElement = document.querySelector(`#trip-total-${newTrip.id}`);
-                    newTripTotalElement.textContent = `$${newTrip.sumTotal()}`;
+                    newTripTotalElement.textContent = newTrip.sumTotal().toLocaleString("en-US", {style:"currency", currency:"USD"});
                 }
             } else {
                 alert("Please enter an expense name.")
@@ -97,7 +97,7 @@ function getExpenseListItemElement(trip) {
     for (let i = 0; i < trip.expenses.length; i++ ) {
         li.innerHTML = `                
             <p>${trip.expenses[i].name}</p> 
-            <p>$${trip.expenses[i].price}</p>
+            <p>${trip.expenses[i].price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
         `;
     }
     return li;

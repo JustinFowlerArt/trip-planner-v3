@@ -22,6 +22,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     margin: .5rem;
     color: white;
 }
@@ -199,6 +200,10 @@ i {
 }
 
 @media only screen and (min-width: 1024px) {
+    .main {
+        font-size: 1.1rem;
+    }
+
     .site-info {
         flex: 1;
     }
@@ -214,8 +219,9 @@ i {
         
     }
 
-    .trip-total {
-        width: 20rem;
+    .new-trip {
+        padding: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .expense {
@@ -226,6 +232,11 @@ i {
 
     .add-expense {
         padding: 1rem;
+    }
+
+    .trip-total {
+        width: 20rem;
+    }
 }
 
 /* ----- Helper Class Styles ----- */
