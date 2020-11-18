@@ -5,7 +5,7 @@ This project is a trip planning resource that allows you to create a list of pos
 ## Features
 ### CSS Features
 - A hamburger navigation menu that expands and collapses on mobile.
-- Flexbox to organize content areas based on mobile or desktop views.
+- Flexbox to organize content areas based on mobile or desktop views. Includes two media queries: 769px - changes navigation and main content layout to row instead of column and 1024px - increases font size and the size of trip cards.
 
 ### JavaScript Features
 - Create a trip, validating input and then use that information to display the trip.
