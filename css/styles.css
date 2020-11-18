@@ -53,6 +53,11 @@ i {
     padding: 20px;
 }
 
+.center {
+    align-items: center;
+}
+
+    /* ----- Header ----- */
 .site-logo {
     width: 50px;
 }
@@ -64,20 +69,13 @@ i {
 .main-header {
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     background-color: rgb(71, 142, 189);
-}
-
-.site-info {
-    align-items: center;
 }
 
 .main-nav {
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .hamburger {
@@ -107,19 +105,17 @@ i {
     border-radius: 4px;
 }
 
+    /* ----- Main ----- */
 .main {
     flex: 1;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .trip-list {
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .trip {
-    align-items: center;
     max-width: 350px;
     margin: 1rem;
     padding: .5rem;
@@ -138,15 +134,11 @@ i {
     background-color: #0000b5;
 }
 
-.expense-list {
-    align-items: center;
-}
-
 .expense {
     justify-content: space-between;
     width: 15rem;
     margin: .5rem 1rem;
-    padding: 10px;
+    padding: .7rem;
     border-radius: 1rem;
     background-color: rgb(71, 142, 189);
 }
@@ -158,8 +150,8 @@ i {
 
 .add-expense,
 .total {
-    margin: 10px;
-    padding: 10px;
+    margin: .7rem;
+    padding: .7rem;
     border-radius: 1rem;
     background-color: rgb(71, 142, 189);
 }
@@ -167,11 +159,10 @@ i {
 .trip-total {
     width: 15rem;
     margin: .5rem 1rem;
-    width: 15rem;
     justify-content: space-between;
-    align-items: center;
 }
 
+    /* ----- Footer ----- */
 .main-footer {
     justify-content: center;
     background-color: rgb(71, 142, 189);
@@ -215,6 +206,26 @@ i {
     .site-title {
         margin: auto;
     }
+
+    .trip {
+        min-width: 350px;
+        max-width: 450px;
+        padding: 1rem;
+        
+    }
+
+    .trip-total {
+        width: 20rem;
+    }
+
+    .expense {
+        width: 20rem;
+        margin: .5rem 1.5rem;
+        padding: .7rem 1rem;
+    }
+
+    .add-expense {
+        padding: 1rem;
 }
 
 /* ----- Helper Class Styles ----- */

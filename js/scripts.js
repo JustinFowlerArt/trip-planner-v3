@@ -42,13 +42,13 @@ class Expense {
 function getTripSectionElement (trip) {
     const section = document.createElement('section');
     section.id = `trip-section-${trip.id}`;
-    section.className = "trip column flex";
+    section.className = "trip column center flex";
     const tripHTMLContent = `        
         <h2>${trip.name}</h2>
-        <ul class="expense-list column flex" id="expense-list-${trip.id}">
+        <ul class="expense-list column center flex" id="expense-list-${trip.id}">
         </ul>
         <button class="add-expense" id="expense-button-${trip.id}">Add Expense</button>
-        <div class="trip-total flex">
+        <div class="trip-total center flex">
             <p>Trip Total</p>
             <p class="total" id="trip-total-${trip.id}">$${trip.total}</p>
         </div>
@@ -60,21 +60,33 @@ function getTripSectionElement (trip) {
 // Button to create new trip object and populate it with content
 newTripButton.addEventListener('click', () => {
     let tripName = prompt("Please name your trip");
-    const newTrip = new Trip(tripName)
-    const sectionElement = getTripSectionElement(newTrip);
-    tripList.appendChild(sectionElement);
-    const newTripExpenseButton = document.querySelector(`#expense-button-${newTrip.id}`);
-    newTripExpenseButton.addEventListener('click', () => {
-        const newTripExpenseList = document.querySelector(`#expense-list-${newTrip.id}`);
-        let expenseName = prompt("Please name your expense");
-        let expensePrice = parseFloat( prompt("Please enter the expense amount") );
-        newTrip.addExpense(expenseName, expensePrice);
-        const newExpenseItemElement = getExpenseListItemElement(newTrip);
-        newTripExpenseList.appendChild(newExpenseItemElement);
-        const newTripTotalElement = document.querySelector(`#trip-total-${newTrip.id}`);
-        newTripTotalElement.textContent = `$${newTrip.sumTotal()}`;
-    });
-    counter++;
+    if (tripName) {
+        const newTrip = new Trip(tripName)
+        const sectionElement = getTripSectionElement(newTrip);
+        tripList.appendChild(sectionElement);
+        const newTripExpenseButton = document.querySelector(`#expense-button-${newTrip.id}`);
+        newTripExpenseButton.addEventListener('click', () => {
+            const newTripExpenseList = document.querySelector(`#expense-list-${newTrip.id}`);
+            let expenseName = prompt("Please name your expense");
+            if (expenseName) {
+                let expensePrice = parseFloat( prompt("Please enter the expense amount") );
+                if ( isNaN(expensePrice) ) {
+                    alert("Please enter a numeric value.")
+                } else {
+                    newTrip.addExpense(expenseName, expensePrice);
+                    const newExpenseItemElement = getExpenseListItemElement(newTrip);
+                    newTripExpenseList.appendChild(newExpenseItemElement);
+                    const newTripTotalElement = document.querySelector(`#trip-total-${newTrip.id}`);
+                    newTripTotalElement.textContent = `$${newTrip.sumTotal()}`;
+                }
+            } else {
+                alert("Please enter an expense name.")
+            }
+        });
+        counter++;
+    } else {
+        alert("Please enter a trip name.")
+    }
 });
 
 // Generate expense li elements and contents 
@@ -101,6 +113,3 @@ hambugerMenuButton.addEventListener('click', () => {
         }
     }
 });
-
-
-// Input Validation
