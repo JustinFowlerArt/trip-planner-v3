@@ -1,4 +1,4 @@
-# js-dev-environment
+# react-dev-environment
 
 Tools that still need to be implemented:
 - Continuous Integration
