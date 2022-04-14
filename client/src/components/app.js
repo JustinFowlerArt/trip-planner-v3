@@ -4,14 +4,12 @@ import Footer from './footer';
 import Header from './header';
 import MainContent from './mainContent';
 
-function App(){
+export default function App(){
   return(
     <div className='flex flex-col h-screen max-h-screen font-serif text-white'>
-      <Header />
+      <Header title='Trip Planner'/>
       <MainContent />
       <Footer />
     </div>
   );
 }
-
-export default App;

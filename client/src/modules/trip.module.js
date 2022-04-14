@@ -90,6 +90,7 @@ export class Trip {
             <div class='flex justify-between items-center w-full px-6 my-3'>
                 <p>Trip Total</p>
                 <p class='primary-bg-color rounded-2xl p-3' id='${this.tripTotalId}'>$${this.total}</p>
+            </div>
         `;
         templateContainer.innerHTML = templateBody;
         this.template = templateContainer;
