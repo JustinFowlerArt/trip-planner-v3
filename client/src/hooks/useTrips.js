@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getTrips } from '../api/tripsApi';
-import SkeletonLoader from '../components/skeletonLoader';
-import PageNotFound from '../components/pageNotFound';
 
 export default function useTrips() {
   const [trips, setTrips] = useState([]);
@@ -22,9 +20,5 @@ export default function useTrips() {
     init();
   }, []);
 
-  if (error) throw error;
-  if (loading) return <SkeletonLoader />;
-  if (trips.length === 0) return <PageNotFound />;
-
-  return trips;
+  return { trips, error, loading };
 }
